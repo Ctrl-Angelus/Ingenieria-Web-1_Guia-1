@@ -1,0 +1,24 @@
+@font-face {
+    font-family: inter;
+    src: url('../fonts/inter.ttf') format('truetype');
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: inter;
+    text-rendering: optimizeLegibility;
+    display: flex;
+    justify-content: center;
+}
