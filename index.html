@@ -244,32 +244,32 @@
                 </div>
 
                 <h2>Ejemplo</h2>
-                <pre>
+                <pre class="code-block">
                     <code>
-                        @SpringBootApplication
-                        public class DemoApplication {
-                            public static void main(String[] args) {
-                                SpringApplication.run(DemoApplication.class, args);
-                            }
-                        }
+@SpringBootApplication
+public class DemoApplication {
+    public static void main(String[] args) {
+        SpringApplication.run(DemoApplication.class, args);
+    }
+}
                     </code>
                 </pre>
-                <pre>
+                <pre class="code-block">
                     <code>
-                        @RestController
-                        @RequestMapping("/api/saludo")
-                        public class SaludoController {
+@RestController
+@RequestMapping("/api/saludo")
+public class SaludoController {
 
-                            @GetMapping
-                            public String saludar() {
-                                return "Saludo desde Spring Boot";
-                            }
+    @GetMapping
+    public String saludar() {
+        return "Saludo desde Spring Boot";
+    }
 
-                            @GetMapping("/{nombre}")
-                            public String saludarA(@PathVariable String nombre) {
-                                return "Hola, " + nombre;
-                            }
-                        }
+    @GetMapping("/{nombre}")
+    public String saludarA(@PathVariable String nombre) {
+        return "Hola, " + nombre;
+    }
+}
                     </code>
                 </pre>
 
@@ -280,7 +280,7 @@
         </section>
     </main>
     <footer>
-        <p>Proyecto de Ingeniería Web I. Miguel Angel Ortiz Loaiza.</p>
+        <p>Proyecto de Ingeniería Web I. Miguel Angel Ortiz Loaiza. 2026</p>
         <p class="disclaimer">
             Spring Boot es una marca registrada de Broadcom Inc. Java es una marca registrada de Oracle Corporation.
             Este sitio no está afiliado ni respaldado por dichas compañías.

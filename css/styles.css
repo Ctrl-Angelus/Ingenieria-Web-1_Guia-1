@@ -30,6 +30,7 @@ button {
 
     --background: var(--light);
     --text: var(--dark);
+    --link: var(--third-complementary);
 }
 
 body.dark {
@@ -54,15 +55,24 @@ body {
 
 h1,
 h2,
-h3,
-h4 {
+h3 {
+    color: var(--text);
+    display: block;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+p {
     color: var(--text);
 }
 
 header {
     width: 100vw;
     height: 70px;
-    background-color: var(--third-complementary);
+    background-color: var(--second-complementary);
     display: flex;
     align-items: center;
 }
@@ -74,9 +84,25 @@ nav {
     align-items: center;
 }
 
+nav a {
+    margin-right: 10px;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--link);
+}
+
 footer {
     width: 100vw;
-    background-color: var(--second-complementary);
+    background-color: var(--third-complementary);
+}
+
+.disclaimer {
+    font-size: 0.7rem;
 }
 
 main {
@@ -90,13 +116,13 @@ main {
 .container {
     width: 80%;
     display: grid;
-    background-color: var(--first-complementary);
     grid-template-columns: 20% 80%;
     flex: 1;
+    margin-top: 10px;
 }
 
 aside {
-    background-color: var(--third-complementary);
+    text-overflow: wrap;
 }
 
 #banner {
@@ -105,13 +131,50 @@ aside {
     display: block;
 }
 
-section,
-article {
-    padding: 1em;
+section article,
+aside,
+footer,
+header {
+    padding: 10px;
 }
 
 code {
-    font-size: 1.5em;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.code-block {
+    font-family: "Fira Code", "Cascadia Code", Consolas, monospace;
+    font-size: 0.95rem;
+    background: none;
+    padding: 10px;
+    white-space: pre;
+    overflow-x: scroll;
+}
+
+.table-container {
+    width: 100%;
+    overflow-y: scroll;
+}
+
+.table-container,
+.code-block,
+dl {
+    color: var(--text);
+}
+
+li {
+    list-style: none;
+}
+
+th,
+td {
+    text-align: left;
+    text-overflow: wrap;
+}
+
+caption {
+    text-align: left;
 }
 
 @media (max-width: 1000px) {
