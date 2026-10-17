@@ -15,27 +15,60 @@
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    * {
+        transition: none !important;
+    }
+}
+
 button {
     cursor: pointer;
     border: none;
 }
 
 :root {
-    --light: #ffff;
+    --light: #ffffff;
     --dark: #262626;
     --main-color: #30391F;
     --first-complementary: #668A4C;
     --second-complementary: #ACCC7B;
-    --third-complementary: #f38b8b;
+    --third-complementary: #da5f5f;
 
     --background: var(--light);
     --text: var(--dark);
-    --link: var(--third-complementary);
+    --heading: var(--main-color);
+    --link: var(--main-color);
+    --surface: #f1f6e8;
+    --surface-strong: #e2edcf;
+    --border: var(--first-complementary);
+    --thead-bg: var(--main-color);
+    --thead-text: var(--light);
+    --header-bg: var(--second-complementary);
+    --header-text: var(--main-color);
+    --footer-bg: var(--third-complementary);
+    --footer-text: var(--dark);
+    --focus: var(--main-color);
+    --code-bg: #1d2312;
+    --code-text: #eef5df;
 }
 
 body.dark {
+    color-scheme: dark;
     --background: var(--dark);
     --text: var(--light);
+    --heading: var(--second-complementary);
+    --link: var(--second-complementary);
+    --surface: #2f2f2f;
+    --surface-strong: #3a4030;
+    --thead-bg: var(--second-complementary);
+    --thead-text: var(--dark);
+    --header-bg: var(--main-color);
+    --header-text: var(--light);
+    --footer-bg: var(--main-color);
+    --footer-text: var(--light);
+    --focus: var(--second-complementary);
+    --code-bg: #161a0f;
+    --third-complementary: #f38b8b;
 }
 
 body {
@@ -49,11 +82,16 @@ body {
     background-color: var(--background);
 }
 
+#logo {
+    padding: 5px;
+    background-color: var(--background);
+    border-radius: 10px;
+}
+
 .hidden {
     display: none;
 }
 
-h1,
 h2,
 h3 {
     color: var(--text);
@@ -61,8 +99,10 @@ h3 {
 }
 
 h1 {
+    color: var(--heading);
     text-align: center;
     margin-bottom: 10px;
+    margin-top: 10px;
 }
 
 p {
@@ -72,9 +112,10 @@ p {
 header {
     width: 100vw;
     height: 70px;
-    background-color: var(--second-complementary);
+    background-color: var(--header-bg);
     display: flex;
     align-items: center;
+    border-bottom: 4px solid var(--link);
 }
 
 nav {
@@ -88,21 +129,44 @@ nav a {
     margin-right: 10px;
 }
 
+#dark-mode-toggle {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    padding: 5px;
+}
+
+body.dark header nav img,
+body.dark #dark-mode-toggle img {
+    filter: invert(1);
+}
+
 a {
     display: flex;
     align-items: center;
-    text-decoration: none;
     font-weight: bold;
     color: var(--link);
 }
 
+a:hover {
+    text-decoration-thickness: 3px;
+}
+
 footer {
-    width: 100vw;
-    background-color: var(--third-complementary);
+    width: 100%;
+    padding: 1rem;
+    text-align: center;
+    background-color: var(--footer-bg);
+}
+
+footer p {
+    color: var(--footer-text);
+    font-weight: bold;
 }
 
 .disclaimer {
     font-size: 0.7rem;
+    margin-top: 0.5rem;
 }
 
 main {
@@ -125,10 +189,51 @@ main {
 aside {
     text-overflow: wrap;
     grid-area: aside;
+    background-color: var(--surface);
+    padding: 1rem;
+
+    & h2 {
+        display: block;
+        color: var(--third-complementary);
+    }
+
+    & a {
+        margin-top: 10px;
+        margin-bottom: 10px;
+        padding: 5px;
+    }
+}
+
+aside a:hover {
+    background: var(--surface-strong);
 }
 
 section article {
     grid-area: article;
+}
+
+article h2 {
+    margin: 2rem 0 0.5rem;
+}
+
+article h2:nth-child(1) {
+    margin-top: 0;
+}
+
+article p {
+    margin-bottom: 1rem;
+}
+
+dl {
+    margin: 1rem 0 2rem;
+}
+
+.table-container {
+    margin: 1rem 0 2rem;
+}
+
+.code-block {
+    margin: 1rem 0;
 }
 
 #banner {
@@ -137,33 +242,15 @@ section article {
     display: block;
 }
 
-section article,
-aside,
 footer,
 header {
     padding: 10px;
 }
 
-code {
-    font-size: 0.95rem;
-    text-align: left;
+section article {
+    padding: 1em;
 }
 
-.code-block {
-    font-family: "Fira Code", "Cascadia Code", Consolas, monospace;
-    font-size: 0.95rem;
-    background: none;
-    padding: 10px;
-    white-space: pre;
-    overflow-x: scroll;
-}
-
-.table-container {
-    width: 100%;
-    overflow-y: scroll;
-}
-
-.table-container,
 .code-block,
 dl {
     color: var(--text);
@@ -173,14 +260,108 @@ li {
     list-style: none;
 }
 
-th,
-td {
-    text-align: left;
-    text-overflow: wrap;
+dl {
+    margin: 1rem 0 2rem;
+    color: var(--text);
+}
+
+dt {
+    margin-top: 1rem;
+    font-weight: 700;
+    color: var(--heading);
+}
+
+dt:first-child {
+    margin-top: 0;
+}
+
+dd {
+    margin: 0.25rem 0 0;
+    padding: 0.5rem 1rem;
+    background: var(--surface);
+    color: var(--text);
 }
 
 caption {
     text-align: left;
+}
+
+code {
+    font-family: "Fira Code", "Cascadia Code", Consolas, monospace;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+:not(pre)>code {
+    font-size: 0.9em;
+    padding: 0.1em 0.4em;
+    background: var(--surface-strong);
+    color: var(--text);
+}
+
+.code-block {
+    margin: 1rem 0;
+    padding: 1rem;
+    background: var(--code-bg);
+    color: var(--code-text);
+    font-family: "Fira Code", "Cascadia Code", Consolas, monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    white-space: pre;
+    tab-size: 4;
+    overflow-x: auto;
+}
+
+.code-block code {
+    background: none;
+    color: inherit;
+}
+
+.table-container {
+    width: 100%;
+    margin: 1rem 0 2rem;
+    overflow-x: auto;
+    color: var(--text);
+}
+
+table {
+    width: 100%;
+    min-width: 480px;
+    border-collapse: collapse;
+}
+
+caption {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 700;
+    color: var(--heading);
+}
+
+th,
+td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    vertical-align: top;
+}
+
+thead th {
+    background: var(--thead-bg);
+    color: var(--thead-text);
+}
+
+tbody th {
+    background: var(--surface-strong);
+    color: var(--text);
+    font-weight: 600;
+}
+
+tbody td {
+    background: var(--background);
+    color: var(--text);
+}
+
+tbody tr:nth-child(even) td {
+    background: var(--surface);
 }
 
 @media (max-width: 1000px) {
