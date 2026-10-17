@@ -7,6 +7,7 @@
     <title>Java en Backend con Spring-boot</title>
 
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="icon" type="image/svg+xml" href="./img/spring-boot-icon.svg">
 </head>
 
 <body>
@@ -21,11 +22,61 @@
     <main>
         <section>
             <h1>Backend con Java y Spring-boot</h1>
-            <img src="./img/banner.png" alt="welcome banner">
+            <img src="./img/banner.png" alt="welcome banner" id="banner" width="1280" height="720" loading="eager">
         </section>
         <section class="container">
-            <aside></aside>
+            <aside>
+            </aside>
             <article>
+                <h2>¿Qué es el Backend?</h2>
+                <p>
+                    Es la parte de una aplicación que se ejecuta en el servidor. Recibe peticiones del cliente
+                    (navegador, app móvil), aplica la lógica de negocio, accede a la base de datos y devuelve una
+                    respuesta.
+                </p>
+
+                <h2>Java en el Backend</h2>
+                <p>
+                    Java es un lenguaje tipado, orientado a objetos y multiplataforma gracias a la JVM (Java Virtual
+                    Machine). Se usa mucho en el backend por su estabilidad, su ecosistema y su rendimiento. Spring Boot
+                    requiere Java 17 o superior en sus versiones actuales.
+                </p>
+
+                <h2>¿Qué es Spring-Boot?</h2>
+                <p>
+                    Principalmente, Spring Framework es un framework que facilita construir aplicaciones Java. Su núcleo
+                    es la inversión de
+                    control y la inyección de dependencias, mientras que Spring Boot es capa sobre Spring que elimina
+                    gran parte de la configuración manual. Ofrece
+                    autoconfiguración, un servidor embebido (Tomcat) y dependencias agrupadas en “starters”.
+                </p>
+
+                <h2>Conceptos</h2>
+                <dl>
+                    <dt>Inversión de control (IoC)</dt>
+                    <dd>
+                        el framework crea y gestiona los objetos en lugar de que lo haga el desarrollador con
+                        <code>new</code>
+                    </dd>
+
+                    <dt>Inyección de dependencias (DI)</dt>
+                    <dd>el framework entrega a una clase los objetos que necesita.</dd>
+
+                    <dt>Bean</dt>
+                    <dd>es un objeto gestionado por el contenedor de Spring</dd>
+
+                    <dt>Starter</dt>
+                    <dd>
+                        dependencia que agrupa todo lo necesario para una funcionalidad (por ejemplo,
+                        <code>spring-boot-starter-web</code>).
+                    </dd>
+
+                    <dt>Maven/Gradle</dt>
+                    <dd>herramientas que gestionan dependencias y la construcción del proyecto.</dd>
+
+                    <dt>API REST</dt>
+                    <dd>estilo de arquitectura para comunicar sistemas usando HTTP.</dd>
+                </dl>
             </article>
         </section>
     </main>
