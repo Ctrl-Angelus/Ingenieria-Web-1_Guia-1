@@ -117,12 +117,18 @@ main {
     width: 80%;
     display: grid;
     grid-template-columns: 20% 80%;
+    grid-template-areas: "aside article";
     flex: 1;
     margin-top: 10px;
 }
 
 aside {
     text-overflow: wrap;
+    grid-area: aside;
+}
+
+section article {
+    grid-area: article;
 }
 
 #banner {
@@ -181,6 +187,6 @@ caption {
     .container {
         display: flex;
         width: 100%;
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 }

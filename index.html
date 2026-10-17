@@ -13,7 +13,7 @@
 <body>
     <header>
             <a href="/" class="logo">
-                <img src="./img/java.svg" alt="Artículo de Spring-Boot" width="50px">
+                <img src="./img/java.svg" alt="Inicio" width="50px">
             </a>
         <nav>
             <a href="https://github.com/Ctrl-Angelus/Ingenieria-Web-1_Guia-1/blob/main/README.md" target="_blank">README</a>
@@ -21,9 +21,9 @@
                 <img src="./img/brand-github.svg" alt="Github profile">
             </a>
         </nav>
-        <button id="dark-mode-toggle">
-            <img src="./img/sun.svg" alt="light mode toggle" id="light-toggle">
-            <img src="./img/moon.svg" alt="dark mode toggle" id="dark-toggle">
+        <button id="dark-mode-toggle" aria-label="Cambiar entre modo claro y oscuro">
+            <img src="./img/sun.svg" id="light-toggle">
+            <img src="./img/moon.svg" id="dark-toggle">
         </button>
     </header>
     <main>
@@ -32,62 +32,6 @@
             <img src="./img/banner.png" alt="welcome banner" id="banner" width="1280" height="720" loading="eager">
         </section>
         <section class="container">
-            <aside aria-labelledby="enlaces">
-                <h2 id="titulo-enlaces">Enlaces relevantes</h2>
-            
-                <section aria-labelledby="enlaces-spring">
-                    <h3 id="enlaces-spring">Spring y Spring Boot</h3>
-                    <ul>
-                        <li>
-                            <a href="https://start.spring.io">
-                                Spring Initializr: generador de proyectos
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://spring.io/projects/spring-boot">
-                                Spring Boot: página oficial
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://docs.spring.io/spring-boot/">
-                                Documentación de Spring Boot
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://spring.io/guides">
-                                Guías oficiales paso a paso
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://spring.io/projects/spring-data-jpa">
-                                Spring Data JPA
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-            
-                <section aria-labelledby="enlaces-referencia">
-                    <h3 id="enlaces-referencia">Referencia general</h3>
-                    <ul>
-                        <li>
-                            <a href="https://docs.oracle.com/en/java/">
-                                Documentación de Java (Oracle)
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://developer.mozilla.org/es/docs/Web/HTTP">
-                                Documentación de HTTP en MDN
-                            </a>
-                        </li>
-                        <li>
-                            <a href="https://www.baeldung.com/spring-boot" hreflang="en">
-                                Tutoriales de Spring Boot en Baeldung
-                                <span lang="en">(en inglés)</span>
-                            </a>
-                        </li>
-                    </ul>
-                </section>
-            </aside>
             <article>
                 <h2>¿Qué es el Backend?</h2>
                 <p>
@@ -188,7 +132,7 @@
                 <h2>Anotaciones básicas</h2>
                 <div class="table-container" role="region" aria-labelledby="cap-anotaciones" tabindex="0">
                     <table>
-                        <caption>Tabla de anotaciones principales de Spring-Boot</caption>
+                        <caption id="cap-anotaciones">Tabla de anotaciones principales de Spring-Boot</caption>
                         <thead>
                             <tr>
                                 <th scope="col">Anotación</th>
@@ -244,18 +188,15 @@
                 </div>
 
                 <h2>Ejemplo</h2>
-                <pre class="code-block">
-                    <code>
+                <pre class="code-block"><code>
 @SpringBootApplication
 public class DemoApplication {
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
     }
 }
-                    </code>
-                </pre>
-                <pre class="code-block">
-                    <code>
+                </code></pre>
+                <pre class="code-block"><code>
 @RestController
 @RequestMapping("/api/saludo")
 public class SaludoController {
@@ -270,13 +211,68 @@ public class SaludoController {
         return "Hola, " + nombre;
     }
 }
-                    </code>
-                </pre>
+                </code></pre>
 
-                    <h2>¿Cómo se crea un proyecto de Spring-Boot?</h2>
-                    <p>Primero, hay que entrar a la herramienta Spring Initializr. Elegir Maven o Gradle para gestionar el proyecto, Java y la versión de Spring-Boot. Agregar dependencias: Spring Web, Spring Data JPA, un driver de base de datos (H2, MySQL o PostgreSQL).</p>
-                    <p>El proyecto se descarga en un .zip que hay que descomprimir, el cual se puede importar en algun IDE. Para ejecutar el proyecto se debe ejecutar la clase prncipal en el IDE o con el comando <code>mvn spring-boot run</code> para Maven, <code>gradle bootRun</code>. Si no se tiene Maven o Gradle instalado, se puede hacer lo mismo con los wrappers de cada uno (archivos ejecutables en la raiz del proyecto, <code>mvnw</code>/<code>gradlew</code>).</p>
+                <h2>¿Cómo se crea un proyecto de Spring-Boot?</h2>
+                <p>Primero, hay que entrar a la herramienta Spring Initializr. Elegir Maven o Gradle para gestionar el proyecto, Java y la versión de Spring-Boot. Agregar dependencias: Spring Web, Spring Data JPA, un driver de base de datos (H2, MySQL o PostgreSQL).</p>
+                <p>El proyecto se descarga en un .zip que hay que descomprimir, el cual se puede importar en algun IDE. Para ejecutar el proyecto se debe ejecutar la clase principal en el IDE o con el comando <code>mvn spring-boot:run</code> para Maven, <code>gradle bootRun</code>. Si no se tiene Maven o Gradle instalado, se puede hacer lo mismo con los wrappers de cada uno (archivos ejecutables en la raiz del proyecto, <code>mvnw</code>/<code>gradlew</code>).</p>
             </article>
+            <aside aria-labelledby="enlaces">
+                <h2 id="enlaces">Enlaces relevantes</h2>
+            
+                <section aria-labelledby="enlaces-spring">
+                    <h3 id="enlaces-spring">Spring y Spring Boot</h3>
+                    <ul>
+                        <li>
+                            <a href="https://start.spring.io">
+                                Spring Initializr: generador de proyectos
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://spring.io/projects/spring-boot">
+                                Spring Boot: página oficial
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://docs.spring.io/spring-boot/">
+                                Documentación de Spring Boot
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://spring.io/guides">
+                                Guías oficiales paso a paso
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://spring.io/projects/spring-data-jpa">
+                                Spring Data JPA
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            
+                <section aria-labelledby="enlaces-referencia">
+                    <h3 id="enlaces-referencia">Referencia general</h3>
+                    <ul>
+                        <li>
+                            <a href="https://docs.oracle.com/en/java/">
+                                Documentación de Java (Oracle)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://developer.mozilla.org/es/docs/Web/HTTP">
+                                Documentación de HTTP en MDN
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.baeldung.com/spring-boot" hreflang="en">
+                                Tutoriales de Spring Boot en Baeldung
+                                <span lang="en">(en inglés)</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </aside>
         </section>
     </main>
     <footer>
@@ -286,7 +282,7 @@ public class SaludoController {
             Este sitio no está afiliado ni respaldado por dichas compañías.
         </p>
     </footer>
+    <script src="./js/index.js" defer></script>
 </body>
-<script src="./js/index.js"></script>
 
 </html>
