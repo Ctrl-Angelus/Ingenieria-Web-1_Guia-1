@@ -16,7 +16,7 @@ Configura un entorno básico de desarrollo web y crea una estructura inicial de 
 aplicando buenas prácticas de organización de archivos y ejecución en el navegador.
 
 ## ¿Cómo ejecutar el proyecto?
-Para ejecutar el proyecto en local, es necesario clonar este repositorio y abrir el archivo index.html en el navegador. Alternativamente, se ingresar al sitio de (GitHub Pages)[https://ctrl-angelus.github.io/Ingenieria-Web-1_Guia-1/]
+Para ejecutar el proyecto en local, es necesario clonar este repositorio y abrir el archivo index.html en el navegador. Alternativamente, se ingresar al sitio de [GitHub Pages](https://ctrl-angelus.github.io/Ingenieria-Web-1_Guia-1/)
 
 ## Herramientas que se utilizaron
 El editor de código que utilicé para esta actividad fue Neovim (Lazyvim). Para navegadores web se usó Zen (Firefox) y Brave (Chromium) y sus respectivas herramientas de desarrollador. Para Servidor local se usó http.server de python y Ngrok.
