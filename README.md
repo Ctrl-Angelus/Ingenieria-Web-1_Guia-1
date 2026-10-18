@@ -20,3 +20,6 @@ Para ejecutar el proyecto en local, es necesario clonar este repositorio y abrir
 
 ## Herramientas que se utilizaron
 El editor de código que utilicé para esta actividad fue Neovim (Lazyvim). Para navegadores web se usó Zen (Firefox) y Brave (Chromium) y sus respectivas herramientas de desarrollador. Para Servidor local se usó http.server de python y Ngrok.
+
+## Video
+Enlace al video del proyecto: [Video](https://youtu.be/McEGIHOpQb4?si=P6syG6DVZfwjpFCV)
